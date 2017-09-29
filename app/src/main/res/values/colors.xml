@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+
+    <color name="colorAccent">#FF4081</color>
+    <color name="red">#D50000</color>
+    <color name="appColor">#cb2929</color>
+    <color name="buttonColor">#c33758</color>
+    <color name="text_gray">#CFCFCF</color>
+    <color name="gray">#EFEFEF</color>
+    <color name="drawItem">#979797</color>
+    <color name="pregressColor">#D26374</color>
+    <color name="dialogButtonTextColor">#7EC039</color>
+    <color name="dialogTextColor">#0e0e0e</color>
+    <color name="facebookbuttonbackgroudcolo">#0666d9</color>
+    <color name="bottomLineColor">#ffffff</color>
+    <color name="white">#FFFFFF</color>
+    <color name="facebook">#3B5999</color>
+    <color name="green">#309E48</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="dialog_btn">#0079ff</color>
+    <color name="dialog_view">#3E80B4</color>
+    <color name="av_default_border">@android:color/white</color>
+    <color name="av_bitmap_background_color">#424242</color>
+    <color name="app_primary">#cb2929</color>
+
+    <color name="alphabet_text_color">#c33758</color>
+    <color name="alphabet_text_selected_color">#c33758</color>
+    <color name="alphabet_background_color">#F5F5F5</color>
+    <color name="alphabet_background_border_color">#9E9E9E</color>
+
+</resources>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">StickerApp</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="Api_key">AIzaSyAWm1KtorooTO_tcINOYxbnhmHfBAZHK6A</string>
+    <string name="action_rate">Rate Us</string>
+    <string name="action_more">MoreApp</string>
+    <string name="action_share">Share App</string>
+    <string name="action_feedback">Feedback</string>
+    <string name="gif">GIF</string>
+    <string name="stickers">STICKERS</string>
+    <string name="message">MESSAGE</string>
+    <string name="facts">FACTS</string>
+    <array name="send_mail">
+        <item>vikramcomorade@gmail.com</item>
+    </array>
+</resources>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "591873571198",
+    "firebase_url": "https://floupr-android-app.firebaseio.com",
+    "project_id": "floupr-android-app",
+    "storage_bucket": "floupr-android-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591873571198:android:ff8291cfc0550214",
+        "android_client_info": {
+          "package_name": "app.android.floupr.elgroup.stickerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591873571198-lhrjm9r4tb5nfsls5igvba2hr2fajko0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATb4PnCKDzmnxwsl9O6bUnOIx2k1_P4-g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

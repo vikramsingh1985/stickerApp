@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_gif"
+            android:icon="@drawable/gif_active"
+            android:title="@string/gif" />
+        <item
+            android:id="@+id/nav_stickers"
+            android:icon="@drawable/sticker_active"
+            android:title="@string/stickers" />
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/message_240"
+            android:title="@string/message" />
+        <item
+            android:id="@+id/nav_facts"
+            android:icon="@drawable/fact_sticker_active"
+            android:title="@string/facts" />
+    </group>
+
+
+</menu>
