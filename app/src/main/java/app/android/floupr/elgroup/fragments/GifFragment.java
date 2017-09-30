@@ -16,7 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
+import app.android.floupr.elgroup.adapters.FragmentImageAdapter;
 import app.android.floupr.elgroup.stickerapp.R;
 
 /**
@@ -29,11 +32,16 @@ public class GifFragment extends Fragment {
     AppCompatButton baloonBtn,cakeBtn,cardBtn,giftBtn,wishesBtn;
     RecyclerView baloonRecyclerView,cakeRecyclerView,cardRecyclerView,giftRecyclerView,wishesRecyclerView;
     RecyclerView.LayoutManager layoutManager;
+    FragmentImageAdapter adapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String []stickers = listFiles("files/stickers");
+        String []stickers = listFiles("files/stickers/");
+        ArrayList<String> listImages = new ArrayList<String>(Arrays.asList(stickers));
+
+        adapter = new FragmentImageAdapter(getActivity(),listImages);
+
     }
 
     @Nullable
@@ -59,13 +67,23 @@ public class GifFragment extends Fragment {
         baloonRecyclerView = (RecyclerView) rootView.findViewById(R.id.baloonRecyclerView);
         baloonRecyclerView.setLayoutManager(layoutManager);
         cakeRecyclerView = (RecyclerView) rootView.findViewById(R.id.cakeRecyclerView);
-        cakeRecyclerView.setLayoutManager(layoutManager);
+        //cakeRecyclerView.setLayoutManager(layoutManager);
         cardRecyclerView = (RecyclerView) rootView.findViewById(R.id.cardRecyclerView);
-        cardRecyclerView.setLayoutManager(layoutManager);
+        //cardRecyclerView.setLayoutManager(layoutManager);
         giftRecyclerView = (RecyclerView) rootView.findViewById(R.id.giftRecyclerView);
-        giftRecyclerView.setLayoutManager(layoutManager);
+       // giftRecyclerView.setLayoutManager(layoutManager);
         wishesRecyclerView = (RecyclerView) rootView.findViewById(R.id.wishesRecyclerView);
-        wishesRecyclerView.setLayoutManager(layoutManager);
+       // wishesRecyclerView.setLayoutManager(layoutManager);
+        String[] stickers = null;
+        try {
+             stickers = getActivity().getResources().getAssets().list("files/stickers/");
+        }catch (IOException e){
+            Log.e("IOException: ",""+e.getLocalizedMessage());
+        }
+        ArrayList<String> listImages = new ArrayList<String>(Arrays.asList(stickers));
+
+        adapter = new FragmentImageAdapter(getActivity(),listImages);
+        baloonRecyclerView.setAdapter(adapter);
 
     }
 
@@ -77,7 +95,7 @@ public class GifFragment extends Fragment {
 
             if (fileList != null) {
                 for (int i = 0; i < fileList.length; i++) {
-                    Log.d("", fileList[i]);
+                    Log.d("Images: ", fileList[i]);
                 }
             }
             return fileList;
