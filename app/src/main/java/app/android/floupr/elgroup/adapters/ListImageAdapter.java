@@ -1,11 +1,17 @@
 package app.android.floupr.elgroup.adapters;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 /**
  * Created by vikram on 24/9/17.
@@ -15,13 +21,13 @@ public class ListImageAdapter extends BaseAdapter {
     private Context mContext;
 
     // Constructor
-    public ListImageAdapter(Context c, Integer[] mThumbIds) {
+    public ListImageAdapter(Context c, ArrayList<String> mThumbIds) {
         mContext = c;
         this.mThumbIds = mThumbIds;
     }
 
     public int getCount() {
-        return mThumbIds.length;
+        return mThumbIds.size();
     }
 
     public Object getItem(int position) {
@@ -46,11 +52,18 @@ public class ListImageAdapter extends BaseAdapter {
         {
             imageView = (ImageView) convertView;
         }
-        imageView.setImageResource(mThumbIds[position]);
+        try {
+            InputStream inputstream = mContext.getAssets().open("files/stickers/" + mThumbIds.get(position));
+
+            Drawable drawable = Drawable.createFromStream(inputstream, null);
+            imageView.setImageDrawable(drawable);
+        }catch (IOException e){
+            Log.e("IOException: ",""+e.getLocalizedMessage());
+        }
         return imageView;
     }
 
     // Keep all Images in array
-    public Integer[] mThumbIds ;
+    public ArrayList<String> mThumbIds ;
 
 }

@@ -74,9 +74,9 @@ public class FragmentImageAdapter extends RecyclerView.Adapter<FragmentImageAdap
         public MyViewHolder(View view) {
             super(view);
             imageView = (ImageView) view.findViewById(R.id.imageView);
-            imageView.setLayoutParams(new GridView.LayoutParams(265, 265));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(35, 40, 35, 40);
+           // imageView.setLayoutParams(new GridView.LayoutParams(265, 265));
+            //imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+           // imageView.setPadding(35, 40, 35, 40);
         }
     }
 
