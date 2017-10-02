@@ -14,16 +14,17 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import app.android.floupr.elgroup.stickerapp.R;
+import app.android.floupr.elgroup.views.GifWebView;
 
 /**
  * Created by vikram on 24/9/17.
  */
 
-public class FragmentImageAdapter extends RecyclerView.Adapter<FragmentImageAdapter.MyViewHolder> {
+public class FragmentGIFAdapter extends RecyclerView.Adapter<FragmentGIFAdapter.MyViewHolder> {
     private Context mContext;
 
     // Constructor
-    public FragmentImageAdapter(Context c, ArrayList<String> mThumbIds) {
+    public FragmentGIFAdapter(Context c, ArrayList<String> mThumbIds) {
         mContext = c;
         this.listImages = mThumbIds;
     }
@@ -51,14 +52,14 @@ public class FragmentImageAdapter extends RecyclerView.Adapter<FragmentImageAdap
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
+        InputStream stream = null;
         try {
-            InputStream inputstream = mContext.getAssets().open("files/stickers/" + listImages.get(position));
-
-            Drawable drawable = Drawable.createFromStream(inputstream, null);
-            holder.imageView.setImageDrawable(drawable);
-        }catch (IOException e){
-            Log.e("IOException: ",""+e.getLocalizedMessage());
+            stream = mContext.getAssets().open("files/gif/" + listImages.get(position));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        holder.imageView = new GifWebView(mContext, "files/gif/" + listImages.get(position));
+
     }
 
     @Override
@@ -67,11 +68,11 @@ public class FragmentImageAdapter extends RecyclerView.Adapter<FragmentImageAdap
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public ImageView imageView;;
+        public GifWebView imageView;;
 
         public MyViewHolder(View view) {
             super(view);
-            imageView = (ImageView) view.findViewById(R.id.imageView);
+            imageView = (GifWebView) view.findViewById(R.id.gifView);
            // imageView.setLayoutParams(new GridView.LayoutParams(265, 265));
             //imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
            // imageView.setPadding(35, 40, 35, 40);

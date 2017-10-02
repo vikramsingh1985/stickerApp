@@ -4,11 +4,10 @@
     android:layout_height="match_parent"
 
     >
-<app.android.floupr.elgroup.views.GifWebView
+<android.support.v7.widget.AppCompatImageView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/gifView"
+    android:id="@+id/imageView"
     android:scaleType="fitXY"
-
     />
 </LinearLayout>

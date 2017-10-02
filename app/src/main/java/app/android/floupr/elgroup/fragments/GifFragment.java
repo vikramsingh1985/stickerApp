@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import app.android.floupr.elgroup.activities.GridActivity;
+import app.android.floupr.elgroup.adapters.FragmentGIFAdapter;
 import app.android.floupr.elgroup.adapters.FragmentImageAdapter;
 import app.android.floupr.elgroup.stickerapp.R;
 
@@ -37,7 +38,7 @@ public class GifFragment extends Fragment {
     AppCompatButton baloonBtn,cakeBtn,cardBtn,giftBtn,wishesBtn;
     RecyclerView baloonRecyclerView,cakeRecyclerView,cardRecyclerView,giftRecyclerView,wishesRecyclerView;
     RecyclerView.LayoutManager layoutManager,layoutManager1,layoutManager2,layoutManager3,layoutManager4;
-    FragmentImageAdapter adapter;
+    FragmentGIFAdapter adapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class GifFragment extends Fragment {
 
 
 
-        adapter = new FragmentImageAdapter(getActivity(),listImages);
+        adapter = new FragmentGIFAdapter(getActivity(),listImages);
     }
 
 
@@ -94,7 +95,7 @@ public class GifFragment extends Fragment {
         }
         ArrayList<String> listImages = new ArrayList<String>(Arrays.asList(stickers));
 
-        adapter = new FragmentImageAdapter(getActivity(),listImages);
+        adapter = new FragmentGIFAdapter(getActivity(),listImages);
         baloonRecyclerView.setAdapter(adapter);
         cardRecyclerView.setAdapter(adapter);
         cakeRecyclerView.setAdapter(adapter);
