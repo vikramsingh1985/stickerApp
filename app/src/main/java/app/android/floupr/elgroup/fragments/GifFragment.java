@@ -42,7 +42,7 @@ public class GifFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String []stickers = listFiles("files/stickers");
+        String []stickers = listFiles("files/gif");
         ArrayList<String> listImages = new ArrayList<String>(Arrays.asList(stickers));
 
 
@@ -88,7 +88,7 @@ public class GifFragment extends Fragment {
         wishesRecyclerView.setLayoutManager(layoutManager4);
         String[] stickers = null;
         try {
-             stickers = getActivity().getResources().getAssets().list("files/stickers");
+             stickers = getActivity().getResources().getAssets().list("files/gif");
         }catch (IOException e){
             Log.e("IOException: ",""+e.getLocalizedMessage());
         }

@@ -37,7 +37,10 @@ import app.android.floupr.elgroup.adapters.DrawerListAdapter;
 import app.android.floupr.elgroup.adapters.ImageAdapter;
 import app.android.floupr.elgroup.adapters.TopImageAdapter;
 import app.android.floupr.elgroup.common.NavItem;
+import app.android.floupr.elgroup.fragments.FactsFragment;
 import app.android.floupr.elgroup.fragments.GifFragment;
+import app.android.floupr.elgroup.fragments.MessageFragment;
+import app.android.floupr.elgroup.fragments.StickerFragment;
 import app.android.floupr.elgroup.stickerapp.R;
 
 public class MainActivity extends AppCompatActivity
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         tool_title = toolbar.findViewById(R.id.toolTitle);
         context =getApplicationContext();
@@ -99,7 +102,7 @@ public class MainActivity extends AppCompatActivity
         mDrawerList.setItemChecked(0, true);
 
         navigationView.setNavigationItemSelectedListener(this);
-        //setUpNavigationView();
+        setUpNavigationView();
         selectItemFromDrawer(fragmentIndex);
 
 
@@ -150,6 +153,7 @@ public class MainActivity extends AppCompatActivity
         });
         //Setting the actionbarToggle to drawer layout
         assert drawer!=null;
+        if(drawable != null)
         toolbar.setNavigationIcon(drawable);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
         actionBarDrawerToggle.setHomeAsUpIndicator(drawable);
@@ -170,21 +174,23 @@ public class MainActivity extends AppCompatActivity
             case 0:
 
                 selectedFragment = new GifFragment();
-
+                fragmentIndex =0;
                 ToolTitle = getString(R.string.gif);
                 break;
             case 1:
-
-                selectedFragment = new GifFragment();
+                fragmentIndex = 1;
+                selectedFragment = new StickerFragment();
 
                 ToolTitle = getString(R.string.stickers);
                 break;
             case 2:
-                selectedFragment = new GifFragment();
+                fragmentIndex = 2;
+                selectedFragment = new MessageFragment();
                 ToolTitle = getString(R.string.message);
                 break;
             case 3:
-                selectedFragment = new GifFragment();
+                fragmentIndex = 3;
+                selectedFragment = new FactsFragment();
                 ToolTitle = getString(R.string.facts);
                 break;
 
@@ -195,6 +201,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         loadFragment(selectedFragment);
+
         setToolBarTitle(ToolTitle);
         drawer.closeDrawers();
 
